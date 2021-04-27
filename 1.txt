@@ -1,0 +1,9 @@
+# parse id, book, and chapter
+for each line:
+  split by space
+  if we find the '\p' tag:
+    break
+
+# get verses
+split rest of input by '\v' tag to build a list of verses
+# if individual words of a verse need to be separately contained, split verses by space into a list of words

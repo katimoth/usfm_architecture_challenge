@@ -1,0 +1,17 @@
+When reading in verses, we would need to split verses by space and internally track the occurrences of 
+opening and closing tags \r and \r*.  Upon finding these tags, mark the start and end verses of the red letter region.
+Consequently, we must modify the data structure of the Verse class to have 'redStart' and 'redEnd' member variables
+which will be the word index of the corresponding Verse's word. 
+
+Ex: for the input "\v In the \r beginning God created \r* the heavens and the earth."
+The data structure would look like this:
+class Verse:
+  verseNum: 1
+  words: [In, the, beginning, God, created, the, heavens, and, the, earth]
+  redStart: 2 (inclusive)
+  redEnd: 5 (exclusive)
+
+This works for ranges that span verses as well.  We can do this by simply setting the redStart variable of the previous
+verse and the redEnd variable of the next verse.
+
+In terms of the UI, we can simply add a 'red' button in the editor as well as add an option when dragging to highlight on the preview.

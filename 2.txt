@@ -1,0 +1,12 @@
+class Verse:
+  verseNum, array of words
+
+class Chapter:
+  chapterNum, array of Verse objects, array of section titles
+
+class Book:
+  bookName, array of Chapter objects
+
+class Bible:
+  array of Book objects
+  version/translation
